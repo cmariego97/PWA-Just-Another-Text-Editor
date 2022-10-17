@@ -18,7 +18,17 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      // generates html file 
+      new HtmlWebpackPlugin({
+        template: './index.html',
+        title: 'JATE Text Editor'
+      }),
+      // injects custom sw.js
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
+      // creates a manifest json file
     ],
 
     module: {
