@@ -1,0 +1,34 @@
+{
+  "name": "JATE",
+  "version": "1.0.0",
+  "description": "An online and offline text editor that utilizes an IndexedDB database.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error:no test specified\" && exit 1",
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "client": "cd client && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmariego97/PWA-Just-Another-Text-Editor"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "if-env": "^1.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/cmariego97/PWA-Just-Another-Text-Editor/issues"
+  },
+  "homepage": "https://github.com/cmariego97/PWA-Just-Another-Text-Editor#readme"
+}
