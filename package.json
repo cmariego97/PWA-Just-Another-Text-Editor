@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "An online and offline text editor that utilizes an IndexedDB database.",
   "main": "server.js",
+  "engines": {
+    "node": "16.18.0"
+  },
   "scripts": {
     "test": "echo \"Error:no test specified\" && exit 1",
     "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
