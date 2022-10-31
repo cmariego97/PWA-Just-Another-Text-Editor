@@ -1,6 +1,3 @@
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
@@ -18,19 +15,17 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      // generates html file and injects bundles
+
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'JATE Text Editor'
       }),
-     
-      // injects custom service worker
+
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
 
-      // Creates a manifest.json file.
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
@@ -52,7 +47,6 @@ module.exports = () => {
     ],
 
     module: {
-      // add css loaders
       rules: [
         {
           test: /\.css$/i,
